@@ -150,11 +150,10 @@ public class CustomerService {
                     "customer with id [%s] profile image not found".formatted(customerId));
         }
 
-        byte[] profileImage = s3Service.getObject(
+        return s3Service.getObject(
                 s3Buckets.getCustomer(),
                 "profile-images/%s/%s".formatted(customerId, customer.profileImageId())
         );
-        return profileImage;
     }
 }
 

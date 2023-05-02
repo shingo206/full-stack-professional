@@ -34,10 +34,10 @@ const MyDropzone = ({ customerId, fetchCustomers }) => {
             customerId,
             formData
         ).then(() => {
-            successNotification("Success", "Profile picture uploaded")
-            fetchCustomers()
+            successNotification("Success", "Profile picture uploaded");
+            fetchCustomers();
         }).catch(() => {
-            errorNotification("Error", "Profile picture failed upload")
+            errorNotification("Error", "Profile picture failed upload");
         })
     }, [])
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
